@@ -2,10 +2,6 @@
 
 > `iOSWeatherApp` uses [Openweathermap API](https://openweathermap.org/api).This app enables users to retrieve current location weather information or search for weather information in a specific area.
 
-### Keyword
-
-- JSON & Codable
-
 ## Getting Started
 
 ### Prerequisites
