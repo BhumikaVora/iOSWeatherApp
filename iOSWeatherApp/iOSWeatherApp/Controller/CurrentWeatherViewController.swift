@@ -62,9 +62,11 @@ class CurrentWeatherViewController: UIViewController {
                 return }
             
             self.currentWeather = currentWeather
-            DispatchQueue.main.async {
-                self.configureData(currentWeather: self.currentWeather!)
-            }
+            Async.main({ [weak self] in
+                guard let strongSelf = self else { return }
+
+                strongSelf.configureData(currentWeather: strongSelf.currentWeather!)
+            })
         }
     }
     
@@ -104,10 +106,10 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     @IBAction func btnSettingClicked(button: UIBarButtonItem) {
-        showActionSheet()
+        setTemperatureUnit()
     }
     
-    func showActionSheet() {
+    func setTemperatureUnit() {
         let action = UIAlertController.actionSheetWithItems(
             title: AppConstant.TemperatureUnitTitle,
             items: [
@@ -121,7 +123,11 @@ class CurrentWeatherViewController: UIViewController {
                 guard let weather = self.currentWeather else { return }
                 self.configureData(currentWeather: weather)
             })
-        action.addAction(UIAlertAction.init(title: AppConstant.Cancel, style: UIAlertAction.Style.cancel, handler: nil))
+        action.addAction(
+            UIAlertAction.init(
+                title: AppConstant.Cancel,
+                style: UIAlertAction.Style.cancel,
+                handler: nil))
         
         action.view.tintColor = .gray
         //Present the controller
@@ -129,7 +135,10 @@ class CurrentWeatherViewController: UIViewController {
     }
     
     func showNoInternetToast(){
-        AppSnackBar.make(in: self.view, message: AppConstant.InternetConnectionMessage, duration: .lengthLong).setAction(with: AppConstant.Retry, action: {
+        AppSnackBar.make(
+            in: self.view,
+            message: AppConstant.InternetConnectionMessage, duration: .lengthLong)
+        .setAction(with: AppConstant.Retry, action: {
         }).show()
     }
     

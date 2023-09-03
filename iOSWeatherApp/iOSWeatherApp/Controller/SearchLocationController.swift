@@ -28,9 +28,12 @@ class SearchLocationController: UIViewController {
             guard let locations = locations else { return }
 
             self.locationData = locations
-            DispatchQueue.main.async {
-                self.locationTableView.reloadData()
-            }
+            
+            Async.main({ [weak self] in
+                guard let strongSelf = self else { return }
+               
+                strongSelf.locationTableView.reloadData()
+            })
         }
     }
     
@@ -64,7 +67,8 @@ extension SearchLocationController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = locationTableView.dequeueReusableCell(withIdentifier: AppConstant.LocationCell, for: indexPath) as? LocationCell else { return UITableViewCell() }
+        guard let cell = locationTableView.dequeueReusableCell(withIdentifier: AppConstant.LocationCell, for: indexPath) as? LocationCell
+        else { return UITableViewCell() }
 
         let locationObj = locationData[indexPath.row]
         let locationTitle = "\(locationObj.name), \(locationObj.state ?? ""), \(locationObj.country ?? "")"

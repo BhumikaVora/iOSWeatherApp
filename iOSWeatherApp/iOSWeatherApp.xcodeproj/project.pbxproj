@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040977FA2AA4CD96004156A5 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040977F92AA4CD96004156A5 /* Async.swift */; };
 		043678EF2AA0A78F003C676F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043678EE2AA0A78F003C676F /* AppDelegate.swift */; };
 		043678F12AA0A78F003C676F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043678F02AA0A78F003C676F /* SceneDelegate.swift */; };
 		043678F32AA0A78F003C676F /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043678F22AA0A78F003C676F /* CurrentWeatherViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040977F92AA4CD96004156A5 /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		043678EB2AA0A78F003C676F /* iOSWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043678EE2AA0A78F003C676F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043678F02AA0A78F003C676F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040977FB2AA4D04D004156A5 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				0483415D2AA255BF00C046AD /* AppSnackBar.swift */,
+				040977F92AA4CD96004156A5 /* Async.swift */,
+				046653962AA2191900B58A10 /* Reachability.swift */,
+				046653982AA22E1A00B58A10 /* UserDefault+Helper.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
 		043678E22AA0A78F003C676F = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 		043678ED2AA0A78F003C676F /* iOSWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				040977FB2AA4D04D004156A5 /* CustomClass */,
 				0436793C2AA11789003C676F /* Utilities */,
 				043679292AA0BF6D003C676F /* Cell */,
 				043679262AA0BDDF003C676F /* Model */,
@@ -223,11 +237,8 @@
 		0436793C2AA11789003C676F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				0483415D2AA255BF00C046AD /* AppSnackBar.swift */,
-				0436793D2AA11799003C676F /* extension.swift */,
-				046653962AA2191900B58A10 /* Reachability.swift */,
-				046653982AA22E1A00B58A10 /* UserDefault+Helper.swift */,
 				047647472AA4AF6E005FEA7D /* AppConstant.swift */,
+				0436793D2AA11799003C676F /* extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 				043679332AA0D906003C676F /* CurrentWeatherMainValue.swift in Sources */,
 				046653972AA2191900B58A10 /* Reachability.swift in Sources */,
 				0436793B2AA0DC17003C676F /* WeatherAPIClient.swift in Sources */,
+				040977FA2AA4CD96004156A5 /* Async.swift in Sources */,
 				0436793E2AA11799003C676F /* extension.swift in Sources */,
 				047647482AA4AF6E005FEA7D /* AppConstant.swift in Sources */,
 				043678EF2AA0A78F003C676F /* AppDelegate.swift in Sources */,
