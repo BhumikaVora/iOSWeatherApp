@@ -11,7 +11,7 @@ class WeatherAPIClient {
     typealias CurrentWeatherCompletionHandler = (CurrentWeather?, Error?) -> Void
     
     private let BaseURL = "https://api.openweathermap.org/"
-    private let apiKey = "fee527de9ad9d4c1b79bbe029bb00537"
+    private let apiKey = "YOURAPIKEY"
 
     private enum SuffixURL: String {
         case searchLocation = "geo/1.0/direct"
